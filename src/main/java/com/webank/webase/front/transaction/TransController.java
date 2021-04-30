@@ -130,6 +130,12 @@ public class TransController extends BaseController {
         return obj;
     }
 
+    @ApiOperation(value = "get raw tx", notes = "get raw tx")
+    @ApiImplicitParam(name = "reqTransHandle", value = "transaction info", required = true, dataType = "reqTransHandle")
+    @PostMapping("/handleWithRaw")
+    public Object transHandleLocal(@Valid @RequestBody ReqTransHandle reqTransHandle, BindingResult result) throws Exception {
+        // Todo: Get Tx and Return Raw Tx with base64
+    }
 
     @ApiOperation(value = "send signed transaction ")
     @ApiImplicitParam(name = "reqSignedTransHandle", value = "transaction info", required = true, dataType = "ReqSignedTransHandle")
